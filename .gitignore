@@ -1,0 +1,18 @@
+# Build artifacts
+*.out
+*.o
+
+# Backup files
+*.bak
+*~
+
+# Compiled object files
+*.so
+*.a
+*.d
+
+# Termux swap files or editor junk
+*.swp
+
+# Testing folder
+test/
