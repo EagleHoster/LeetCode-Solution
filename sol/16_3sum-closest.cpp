@@ -15,9 +15,9 @@ Example 2:
 	Output: 0
 	Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 
-Runtime--> ms, Beats:%
-Memory--> MB, Beats:%
-Score--> %
+Runtime--> 17ms, Beats:24.38%
+Memory--> 14.11MB, Beats:28.41%
+Score--> 26.395%
 */
 
 #include <iostream>
@@ -28,7 +28,7 @@ class Solution {
 public:
     int threeSumClosest(std::vector<int>& nums, int target) {
         std::sort(nums.begin(), nums.end());
-        int closest = nums[0] + nums[1] + nums[2]; // initialize with first possible triplet
+        int closest = nums[0] + nums[1] + nums[2];
 
         for (int i = 0; i < nums.size() - 2; i++) {
             int left = i + 1;
@@ -37,13 +37,12 @@ public:
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
                 
-                // Update closest if needed
                 if (abs(sum - target) < abs(closest - target)) {
                     closest = sum;
                 }
 
                 if (sum == target) {
-                    return target; // Best possible answer
+                    return target;
                 } else if (sum < target) {
                     left++;
                 } else {
